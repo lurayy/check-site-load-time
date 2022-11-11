@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="css/main.css">
+      <script src="js/main.js" ></script>
+    </head>
+    <body>
+      <div>
+        <h1 class="title">Check Home Page Load Time</h1>
+      </div>
+        <div class="center-me" id="main-content">
+          <button class="btn" id="start-btn" onclick="start()"> Start </button>
+
+            <table id="main-table">
+              <thead>
+                <tr>
+                  <th>Sites</th>
+                  <th>Time in Second</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+              </tbody>
+            </table>
+            <div>
+              <button class="btn" id="restart-btn" onclick="redo()">Redo</button>
+            </div>
+          </div>
+        <div>
+          <div class="waveWrapper waveAnimation">
+              <div class="waveWrapperInner bgTop">
+                <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+              </div>
+              <div class="waveWrapperInner bgMiddle">
+                <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+              </div>
+              <div class="waveWrapperInner bgBottom">
+                <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+              </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -17,7 +17,7 @@ def send_static(filename):
 @post('/api/benchmark_site/')
 def benchmark_site():
     try:
-        if request.json['use_full_benchmark']:
+        if request.json['use_browser_sim']:
             pass
         start = time()
         site = requests.get(request.json['site'])
@@ -46,6 +46,6 @@ def index():
 
 
 # for multi-thread
-run(host='localhost', port=8000, server='paste')
+# run(host='localhost', port=8000, server='paste')
 
-# run(host='localhost', port=8000)
+run(host='localhost', port=8000)

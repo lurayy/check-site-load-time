@@ -29,7 +29,7 @@ function start_benchmark() {
 
 async function benchmark_and_update(site, table) {
     toggle = document.getElementById('toggle-benchmark')
-    data = { 'site': site, 'use_full_benchmark': toggle.checked }
+    data = { 'site': site, 'use_browser_sim': toggle.checked }
     fetch("/api/benchmark_site/", {
         method: 'POST',
         headers: {

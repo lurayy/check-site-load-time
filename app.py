@@ -1,6 +1,7 @@
 import os
 
-from bottle import route, run, template, static_file, post, response, request
+from bottle import (route, run, template, static_file, post, response, request,
+                    default_app)
 from utils import check_size_and_load_time, benchmark_with_assets
 
 path = os.path.abspath(__file__)
@@ -41,7 +42,7 @@ def index():
     return template('template/index.html')
 
 
-# for multi-thread
-run(host='localhost', port=8000, server='paste')
-
-# run(host='localhost', port=8000)
+if __name__ == '__main__':
+    run(host='localhost', port=8000, server='paste')
+else:
+    app = application = default_app()

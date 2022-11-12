@@ -3,7 +3,7 @@
 ## Some notes
 - By default the app only takes into account the main HTML file for the webpage.
 - Enabling "Include Assets" also adds all the images, css and js files for that webpage. 
-- To sort by time or by size, you can click on the respective header.
+- To sort by time or by size, you can click on the respective header and click again to change to order.
 
 
 ### Requirements

@@ -43,7 +43,9 @@ body {
   height: 100%;
   z-index: -100;
   background-image: linear-gradient(to top, #30082b 10%, #27273c 80%);
+
 }
+
 
 .bgTop {
   z-index: 15;
@@ -86,6 +88,39 @@ animation: move-wave 3s;
 .waveAnimation .waveBottom {
   animation: move_wave 15s linear infinite;
 }
+
+.lds-hourglass {
+  display: none;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
 
 .btn
 {      
@@ -198,10 +233,7 @@ tbody td {
   background-image: radial-gradient(ellipse, #ffffff, #b0acb9);
   color: transparent;
   background-clip: text;
-  text-shadow: 0 0 1em hsla(321, 51%, 29%, 0.5),
-  0 0 0.125em hsla(318, 63%, 34%, 0.5),
-  -0.25em -0.125em 0.125em hsla(41, 64%, 20%, 0.125),
-  0.25em 0.125em 0.125em hsla(201, 64%, 32%, 0.25);
+  
   -webkit-background-clip: text;
 }
 

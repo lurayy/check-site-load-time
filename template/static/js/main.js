@@ -1,14 +1,14 @@
 var global_data = [];
-
 function start() {
-    button = document.getElementById('start-btn')
-    button.style.display = "none";
-    main_table = document.getElementById('main-table')
-    main_table.style.display = "block";
+    document.getElementById('start-btn').style.display = "none";
+    document.getElementById('main-table').style.display = "block";
     start_benchmark()
 }
 
 function start_benchmark() {
+    document.getElementById('loading').style.display = "block";
+    document.getElementById('restart-btn').style.display = "none";
+
     sites = [
         "https://www.claranet.com",
         "https://www.claranet.de",
@@ -23,13 +23,22 @@ function start_benchmark() {
     sites.forEach(site => {
         benchmark_and_update(site, table);
     });
-    button = document.getElementById('restart-btn')
-    button.style.display = "block";
+    check_loading(table);
+}
+
+function check_loading(table) {
+    if (8 != table.childElementCount) {
+        setTimeout(check_loading, 200, table);
+    } else {
+        document.getElementById('loading').style.display = "none";
+        button = document.getElementById('restart-btn')
+        button.style.display = "block";
+    }
 }
 
 async function benchmark_and_update(site, table) {
     toggle = document.getElementById('toggle-benchmark')
-    data = { 'site': site, 'use_browser_sim': toggle.checked }
+    data = { 'site': site, 'include_assets': toggle.checked }
     fetch("/api/benchmark_site/", {
         method: 'POST',
         headers: {
